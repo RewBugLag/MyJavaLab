@@ -44,7 +44,7 @@ public class VendingMachine {
     public int getMaximum() {
         return maximum;
     }
-    ///////////////////////////////////////////////////////////////////
+    /////////////////////////////////[Get Specified]/////////////////////////////////
     public int getSpecProductPrice(String yProduct) {
         findingProduct(yProduct);
         if (index == -1) {
@@ -60,7 +60,7 @@ public class VendingMachine {
         }
         return productTotal[index];
     }
-    ///////////////////////////////////////////////////////////////////
+    ///////////////////////[Get to display for admin when set]///////////////////////
     public int getProductPriceAd() {
         if (indexAd == -1) {
             return -3;
@@ -81,7 +81,7 @@ public class VendingMachine {
         }
         return productTotal[indexAd];
     }
-    ///////////////////////////////////////////////////////////////////
+    ////////////////////////////[Get to display for user]////////////////////////////
     public int getProductPrice() {
         findingProduct(product);
         if (index == -1) {
@@ -105,7 +105,7 @@ public class VendingMachine {
         }
         return productTotal[index];
     }
-    ///////////////////////////////////////////////////////////////////
+    /////////////////////////////////[Just Get]/////////////////////////////////
     public int getVendingMoney() {
         return vendingMoney;
     }
@@ -113,7 +113,7 @@ public class VendingMachine {
     public int getMoneyInserted() {
         return moneyInserted;
     }
-    ///////////////////////////////////////////////////////////////////
+    /////////////////////////////[User-side Processing]/////////////////////////////
 
     public boolean receiveMoney(int amount) {
         if (amount < 0) {
@@ -157,7 +157,7 @@ public class VendingMachine {
     public int cancel() {
         return moneyInserted;
     }
-    ///////////////////////////////////////////////////////////////////
+    /////////////////////////////////[Set section]/////////////////////////////////
 
     // need implementation for Array[index]
     public void setAll(int i, String yProduct, int price, int total) { // for first time setting
@@ -208,7 +208,7 @@ public class VendingMachine {
             return true;
         }
     }
-    ///////////////////////////////////////////////////////////////////
+    /////////////////////////////////[Processing]/////////////////////////////////
 
     // This is product finder [indexOf]
     public boolean findingProduct(String xProduct) {
