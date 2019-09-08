@@ -34,11 +34,6 @@ public class TestVendingMachine {
         vendA.setProductTotal(4000, "grape");
         System.out.println("set total to: " + vendA.getProductTotalAd());
         /*
-        System.out.println(vendA.productType[4]);
-        System.out.println(vendA.productPrice[4]);
-        System.out.println(vendA.productTotal[4]);
-        */
-        /*
         vendA.setAll(4, "grape", 40, 4000);
         System.out.println("set product: " + vendA.getProductTypeAd());
         System.out.println("set price to: " + vendA.getProductPriceAd());
@@ -77,10 +72,14 @@ public class TestVendingMachine {
         // user session
         System.out.println("[ user session test ]\n");
         System.out.println("current money inserted: " + vendA.getMoneyInserted());
-        vendA.receiveMoney(10);
+        System.out.println(vendA);
+        vendA.receiveMoney(20); // insert more 20 baths
+        System.out.println(vendA);
         System.out.println("second inserted: " + vendA.getMoneyInserted());
         //vendA.setProductPrice(10, "grape");
         System.out.println("product price: " + vendA.getProductPrice());
+        System.out.println();
+        System.out.println("error log: { -1 = 0 product, -2 = !enough money, -3 = 404 product not found }");
         System.out.println("request for product with เงินทอน: " + vendA.giveProduct());
         System.out.println("\n----------Machine side-----------");
         System.out.println("current product: " + vendA.getProductType());

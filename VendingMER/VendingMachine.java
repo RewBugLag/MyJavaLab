@@ -1,10 +1,8 @@
 /*
--1 = no product | invalid index
+-1 = 0 product left
 -2 = !enough
 -3 = 404 product not found
 */
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class VendingMachine {
     // instance's input
@@ -30,6 +28,9 @@ public class VendingMachine {
         this.moneyInserted = moneyInserted;
         this.product = product;
         
+        if (moneyInserted > 0) {
+            inserted = true;
+        }
     }
 
     public int setMaximumStorage(int maximum) {
@@ -119,11 +120,10 @@ public class VendingMachine {
         if (amount < 0) {
             return false;
 
-        } else {
-            moneyInserted += amount;
-            inserted = true;
-            return true;
-        }
+        } 
+        moneyInserted += amount;
+        inserted = true;
+        return true;
     }
 
     // need implementation for Arrays data type
