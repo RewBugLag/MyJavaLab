@@ -24,22 +24,11 @@ public class VendingMachine {
     String[] productType;
     int[] productTotal;
 
-    public VendingMachine(int moneyInserted, String product) {
-        this.moneyInserted = moneyInserted;
-        this.product = product;
-        
-        if (moneyInserted > 0) {
-            inserted = true;
-        }
-    }
-
-    public int setMaximumStorage(int maximum) {
+    public VendingMachine(int maximum) {
         this.maximum = maximum;
         productPrice = new int[maximum];
         productType = new String[maximum];
         productTotal = new int[maximum];
-        return maximum;
-
     }
 
     public int getMaximum() {
@@ -127,6 +116,14 @@ public class VendingMachine {
     }
 
     // need implementation for Arrays data type
+    public boolean chooseProduct(String product) {
+        if (product == null) {
+            return false;
+        } 
+        this.product = product;
+        return true;
+    }
+
     public int giveProduct() {
         findingProduct(product);
         if (index == -1) {

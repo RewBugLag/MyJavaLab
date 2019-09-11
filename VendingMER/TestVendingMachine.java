@@ -4,12 +4,11 @@
 public class TestVendingMachine {
 
     public static void main(String[] args) {
-        VendingMachine vendA = new VendingMachine(10, "grape");
+        VendingMachine vendA = new VendingMachine(10);
         // admin session
         System.out.println("[ admin session test ]\n");
-
-        System.out.println("set maximum to: " + vendA.setMaximumStorage(5));
-        System.out.println(vendA.getMaximum());
+        // setting up
+        System.out.println("set maximum to: " + vendA.getMaximum());
         /*
         vendA.setAll(0, "orange", 10, 1000);
         System.out.println("set product: " + vendA.getProductTypeAd());
@@ -33,6 +32,7 @@ public class TestVendingMachine {
         System.out.println("set price to: " + vendA.getProductPriceAd());
         vendA.setProductTotal(4000, "grape");
         System.out.println("set total to: " + vendA.getProductTotalAd());
+        System.out.println();
         /*
         vendA.setAll(4, "grape", 40, 4000);
         System.out.println("set product: " + vendA.getProductTypeAd());
@@ -77,10 +77,12 @@ public class TestVendingMachine {
         System.out.println(vendA);
         System.out.println("second inserted: " + vendA.getMoneyInserted());
         //vendA.setProductPrice(10, "grape");
+        vendA.chooseProduct("grape");
+        System.out.println("Choosing product: " + vendA.getProductType());
         System.out.println("product price: " + vendA.getProductPrice());
+        System.out.println("request for product with เงินทอน: " + vendA.giveProduct());
         System.out.println();
         System.out.println("error log: { -1 = 0 product, -2 = !enough money, -3 = 404 product not found }");
-        System.out.println("request for product with เงินทอน: " + vendA.giveProduct());
         System.out.println("\n----------Machine side-----------");
         System.out.println("current product: " + vendA.getProductType());
         System.out.println("current product amount: " + vendA.getProductTotal());
