@@ -79,6 +79,7 @@ public class TestVendingMachine {
         //vendA.setProductPrice(10, "grape");
         vendA.chooseProduct("grape");
         System.out.println("Choosing product: " + vendA.getProductType());
+        System.out.println(vendA);
         System.out.println("product price: " + vendA.getProductPrice());
         System.out.println("request for product with เงินทอน: " + vendA.giveProduct());
         System.out.println();
